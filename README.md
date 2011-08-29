@@ -9,9 +9,11 @@ QueryReviewer is an advanced SQL query analyzer.  It accomplishes the following 
  * Attach meaningful warnings to individual queries, and collections of queries
  * Display interactive summary on page
 
-## This Fork ##
+## Use This Fork ##
 
-I use this utility for most of my rails projects. Still the best out there in my opinion for analyzing and understanding your generated SQL queries. I forked the original [query_reviewer](https://github.com/dsboulder/query_reviewer) and applied a collection of patches that have been made since the plugin was created. A list of the biggest additions below:
+I use this utility for most of my MySQL-backed Rails projects. Still the best out there in my opinion for analyzing and understanding your generated SQL queries. 
+I forked the original [query_reviewer](https://github.com/dsboulder/query_reviewer) and applied a collection of patches that have been made since the plugin was created. 
+A list of the biggest additions below:
 
  * Snazzed up the README into markdown for better readability
  * Full compatibility for Rails 3 (including Railtie)
@@ -22,9 +24,21 @@ I use this utility for most of my rails projects. Still the best out there in my
  * Fixes for deprecation warnings and for 1.9 compatiblity
  * Converts templates to more modern foo.html.erb naming
 
-Last commit to the main repository was on March 30th, 2009. This fork compiles a variety of patches that were made since that time along with additional work to support compatibility with 1.9 and Rails 3. **Also:** If anyone else creates generally useful enhancements to this utility please start by forking this and then issue me a pull request.
+As of August 2011, This has become the "official" version to use. David has deprecated the [original repo](https://github.com/dsboulder/query_reviewer) and recommends that people looking for this utility use this fork instead. 
+This fork compiles a variety of patches that were made since that time along with additional work to support compatibility with 1.9 and Rails 3. 
+**Also:** If anyone else creates generally useful enhancements to this utility please start by forking this and then issue me a pull request.
 
-**Note:** This plugin should work for Rails 2.X and Rails 3. Support for Rails 3 has been confirmed in the latest revision (with fixed deprecation warnings).
+**Note:** This plugin should work for Rails 2.X and Rails 3. If you run into issues, please file a bug report or send a pull request. I consider this new fork to be a group effort
+so if you want to be added as a contributor to help maintain this, please let me know!
+
+## Database Limitations ##
+
+As of right now, this plugin  supports analyzing queries **only for MySQL**. I consider this the primary **limitation** of this gem. 
+I am now using PostgreSQL for a number of my projects and the "EXPLAIN" output is totally different. Several people have started a PostgreSQL adapter for
+this plugin, but none that are mature enough to include here.
+
+If anyone is interested at taking a stab at implementing PostgreSQL support for this utility, that would be hugely appreciated! I hope this plugin can come to support
+all the major Rails adapters over time.
 
 ## Installation ##
 
