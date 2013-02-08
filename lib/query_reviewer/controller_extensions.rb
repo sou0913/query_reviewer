@@ -48,8 +48,7 @@ module QueryReviewer
     end
 
     def perform_action_with_query_review(*args)
-      return unless (CONFIGURATION["enabled"] == true               and cookies["query_review_enabled"]) ||
-                    (CONFIGURATION["enabled"] == "based_on_session" and session["query_review_enabled"])
+      Thread.current["query_reviewer_enabled"] = (CONFIGURATION["enabled"] == true and cookies["query_review_enabled"]) || (CONFIGURATION["enabled"] == "based_on_session" and session["query_review_enabled"])
 
       t1 = Time.now
       r = defined?(Rails::Railtie) ? process_action_without_query_review(*args) : perform_action_without_query_review(*args)
