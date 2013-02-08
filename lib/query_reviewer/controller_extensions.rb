@@ -63,7 +63,7 @@ module QueryReviewer
       process_without_query_review(*args)
     end
 
-    # @return [Boolean].  Returns whether or not the user has indicated that query_reviewer is enabled
+    # @return [Boolean].  Returns whether or not the user has indicated that query_reviewer output is enabled
     def query_reviewer_output_enabled?
       cookie_enabled = (CONFIGURATION["enabled"] == true and cookies["query_review_enabled"])
       session_enabled = (CONFIGURATION["enabled"] == "based_on_session" and session["query_review_enabled"])
