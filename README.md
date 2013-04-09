@@ -11,8 +11,8 @@ QueryReviewer is an advanced SQL query analyzer.  It accomplishes the following 
 
 ## Use This Fork ##
 
-I use this utility for most of my MySQL-backed Rails projects. Still the best out there in my opinion for analyzing and understanding your generated SQL queries. 
-I forked the original [query_reviewer](https://github.com/dsboulder/query_reviewer) and applied a collection of patches that have been made since the plugin was created. 
+I use this utility for most of my MySQL-backed Rails projects. Still the best out there in my opinion for analyzing and understanding your generated SQL queries.
+I forked the original [query_reviewer](https://github.com/dsboulder/query_reviewer) and applied a collection of patches that have been made since the plugin was created.
 A list of the biggest additions below:
 
  * Snazzed up the README into markdown for better readability
@@ -24,8 +24,8 @@ A list of the biggest additions below:
  * Fixes for deprecation warnings and for 1.9 compatiblity
  * Converts templates to more modern foo.html.erb naming
 
-As of August 2011, This has become the "official" version to use. David has deprecated the [original repo](https://github.com/dsboulder/query_reviewer) and recommends that people looking for this utility use this fork instead. 
-This fork compiles a variety of patches that were made since that time along with additional work to support compatibility with 1.9 and Rails 3. 
+As of August 2011, This has become the "official" version to use. David has deprecated the [original repo](https://github.com/dsboulder/query_reviewer) and recommends that people looking for this utility use this fork instead.
+This fork compiles a variety of patches that were made since that time along with additional work to support compatibility with 1.9 and Rails 3.
 **Also:** If anyone else creates generally useful enhancements to this utility please start by forking this and then issue me a pull request.
 
 **Note:** This plugin should work for Rails 2.X and Rails 3. If you run into issues, please file a bug report or send a pull request. I consider this new fork to be a group effort
@@ -33,7 +33,7 @@ so if you want to be added as a contributor to help maintain this, please let me
 
 ## Database Limitations ##
 
-As of right now, this plugin  supports analyzing queries **only for MySQL**. I consider this the primary **limitation** of this gem. 
+As of right now, this plugin  supports analyzing queries **only for MySQL**. I consider this the primary **limitation** of this gem.
 I am now using PostgreSQL for a number of my projects and the "EXPLAIN" output is totally different. Several people have started a PostgreSQL adapter for
 this plugin, but none that are mature enough to include here.
 
@@ -49,7 +49,12 @@ All you have to do is install it into your Rails 2 or 3 project.
 Right now if you use bundler, simply add this to your Gemfile:
 
     # Gemfile
-    gem "query_reviewer", :git => "git://github.com/nesquena/query_reviewer.git"
+    gem "query_reviewer"
+
+or to use the latest from github:
+
+    # Gemfile
+    gem "query_reviewer", :github => "nesquena/query_reviewer"
 
 If you are not using bundler, you might want to [start using it](http://gembundler.com/rails23.html). You can also install this as a plugin:
 
@@ -129,8 +134,7 @@ Know of a better alternative? Let me know!
 
 ## Acknowledgements ##
 
-Created by Kongregate & David Stevenson.
-Refactorings and compilations of all fixes since was done by Nathan Esquenazi.
-Also, ajvargo for helping with some fixes.
+Created by Kongregate & David Stevenson. Refactorings and maintenance done by Nathan Esquenazi.
+Also [@ajvargo](http://github.com/ajvargo) helped with several fixes.
 
 Copyright (c) 2007-2008 Kongregate & David Stevenson, released under the MIT license
