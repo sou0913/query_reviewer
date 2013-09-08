@@ -23,7 +23,7 @@ module QueryReviewer
     end
 
     def add(sql, duration, profile)
-      sql << sql
+      sqls << sql
       durations << duration
       profiles << profile
     end
