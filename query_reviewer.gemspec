@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'query_reviewer'
-  s.version = '0.1.8'
+  s.version = '0.2.0'
   s.author = 'dsboulder, nesquena'
   s.email = 'nesquena' + '@' + 'gmail.com'
   s.homepage = 'https://github.com/nesquena/query_reviewer'
