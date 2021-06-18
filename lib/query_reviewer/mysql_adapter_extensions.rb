@@ -1,10 +1,14 @@
 module QueryReviewer
   module MysqlAdapterExtensions
     def self.included(base)
-      base.alias_method_chain :select, :review
-      base.alias_method_chain :update, :review
-      base.alias_method_chain :insert, :review
-      base.alias_method_chain :delete, :review
+      base.alias_method :select_without_review, :select
+      base.alias_method :select, :select_with_review
+      base.alias_method :update_without_review, :update
+      base.alias_method :update, :update_with_review
+      base.alias_method :insert_without_review, :insert
+      base.alias_method :insert, :insert_with_review
+      base.alias_method :delete_without_review, :delete
+      base.alias_method :delete, :delete_with_review 
     end
 
     def update_with_review(sql, *args)

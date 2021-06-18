@@ -10,9 +10,11 @@ module QueryReviewer
     def self.included(base)
       if QueryReviewer::CONFIGURATION["inject_view"]
         alias_name = defined?(Rails::Railtie) ? :process_action : :perform_action
-        base.alias_method_chain(alias_name, :query_review)
+        base.alias_method "#{alias_name}_without_query_review".to_sym, alias_name.to_sym
+        base.alias_method alias_name.to_sym, "#{alias_name}_with_query_review".to_sym
       end
-      base.alias_method_chain :process, :query_review
+      base.alias_method :process_without_query_review, :process
+      base.alias_method :process, :process_with_query_review
       base.helper_method :query_review_output
     end
 
